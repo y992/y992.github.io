@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>控制DIV属性</title>
+	</head>
+	<style>
+		#btn{width: 500px;margin: 0 auto;padding: 0;text-align:center;}
+		#div1{width: 100px;height: 100px;background: black;margin: 10px auto;display: block;}
+	</style>
+	<script>
+		var changestyle = function(elem,attr,value){
+			elem.style[attr] = value
+		};
+		window.onload = function ()
+		{
+			var obtn = document.getElementsByTagName("input");
+			var odiv = document.getElementById("div1");
+			var val = ["width","height","background","display","display"];
+			var ova = ["200px","200px","red","none","block"];
+			for (var i = 0;i<obtn.length;i++){
+				obtn[i].index = i;
+				obtn[i].onclick = function(){
+					this.index == obtn.length-1 && (odiv.style.cssText = "");
+					changestyle(odiv,val[this.index],ova[this.index])
+				}
+			}
+		};
+	</script>
+	<body>
+		<div id="btn">
+			<input type="button" value="变宽" />
+			<input type="button" value="变高" />
+			<input type="button" value="变色" />
+			<input type="button" value="隐藏" />
+			<input type="button" value="重置" />
+			<div id="div1"></div>
+		</div>
+	</body>
+</html>
