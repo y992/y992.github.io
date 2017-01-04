@@ -29,7 +29,7 @@
     		var olink = document.getElementsByTagName("link")[0];
     		var oskin = document.getElementById("skin").getElementsByTagName("li");
     		for (var i = 0;i<oskin.length;i++){
-    			oskin[0].onclick = function (){
+    			oskin[i].onclick = function (){
     				for(var p in oskin) oskin[p].className= " ";
     				this.className = "current";
     				olink["href"] = this.id + ".css";
