@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		body{font: 12px/1.5 tahoma;color: #fff;}
+		#div1{width: 150px;height: 150px;margin: 0 auto;padding: 10px;background: black;border: 10px solid #000;cursor: crosshair;}
+		#div1.hover{color: red;background: #f0f0f0;border: 10px solid red;}
+	</style>
+	<script>
+		window.onload = function ()
+		{
+			var odiv = document.getElementById("div1");
+			odiv.onmouseover = function ()
+			{
+				odiv.className = "hover";
+				
+			}
+			odiv.onmouseout = function ()
+			{
+				odiv.className = "";
+			}
+		}
+	</script>
+	<body>
+		<div id="div1">鼠标移入改变样式,移出恢复</div>
+	</body>
+</html>
