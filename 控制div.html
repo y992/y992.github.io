@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用循环将3个div改变颜色</title>
+		<style>
+			#border{width: 330px;height: 100px;margin: 10px auto;}
+			#border div{float: left;width: 100px;height:100px;margin:0 5px;background: black;}
+		</style>
+		<script>
+			window.onload = function ()
+			{
+				var odiv = document.getElementById("border").getElementsByTagName("div");
+				var obtn = document.getElementsByTagName("button")[0];
+				obtn.onclick = function ()
+				{
+					for (var i = 0;i < odiv.length;i++) 
+					odiv[i].style.background = "red";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<center><button>点击将div变红</button></center>
+		<div id="border">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		
+	</body>
+</html>
