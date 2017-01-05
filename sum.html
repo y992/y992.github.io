@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>求和</title>
+		<style>
+			body{color: #999;font: 12px /1.5 tahoma;}
+			#outer{width: 500px;margin: 0 auto;}
+			#outer input{padding: 3px;border: 1px solid #CCC;font-family: inherit;width: 220px;margin-right: 10px;}
+			.sum{font-size: 30px ;color: red;}
+		</style>
+		<script>
+			window.onload = function ()
+			{
+				var btn = document.getElementsByTagName("button")[0];
+				var inp = document.getElementsByTagName("input")[0];
+				var str = document.getElementsByTagName("strong")[0];
+				inp.onkeyup = function ()
+				{
+					this.value =this.value.replace(/[^(/d)|(,)]/," ")
+				}
+				btn.onclick = function ()
+				{
+					var sum =0;
+					var inp= document.getElementsByTagName("input")[0].value.split("+");
+					for(var i in inp)
+					{
+						sum +=parseInt(inp[i]);
+					}
+					str.innerHTML = sum
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="outer">
+			<label><input type="text" value="1+2+3+4+5+6+7+8+9" /><span>输入数字求和</span></label>
+			<p><button>求和</button></p>
+			<strong class="sum"></strong>
+		</div>
+	</body>
+</html>
