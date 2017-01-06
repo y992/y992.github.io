@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>函数传参，改变Div任意属性的值</title>
+		<style>
+			body,p{margin: 0;padding: 0;}
+			body{color: #333;font: 12px/1.5 tahoma;padding-top: 10px;}
+			#outer{width: 300px;margin: 0 auto;}
+			p{margin-bottom: 10px;}
+			button{margin-right: 5px;}
+			label{width: 5em;text-align: right;display: inline-block;}
+			input{padding:3px;font-family:inherit;border:1px solid #ccc;}
+			#box{width: 180px;height: 180px;background: #000;color: #fff;margin: 0 auto ;padding: 10px;}
+		</style>
+		<script>
+			var changestyle = function (elem,name,value)
+			{
+				elem.style[name] = value
+			}
+			window.onload = function ()
+			{
+				var btn = document.getElementsByTagName("button");
+				var inp = document.getElementsByTagName("input");
+				var div = document.getElementById("box");
+				btn[0].onclick = function ()
+				{
+					changestyle(div,inp[0].value,inp[1].value);
+				}
+				btn[1].onclick = function ()
+				{
+					div.removeAttribute("style")
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="outer">
+			<p><label>属性名：</label><input type="text" value="background" /></p>
+			<p><label>属性值：</label><input type="text" value="blue" /></p>
+			<p><label></label><button>确定</button><button>重置</button></p>
+		</div>
+		<div id="box">在上方输入框输入"属性名"及"属性值"，点击确定按钮查看效果。</div>
+	</body>
+</html>
