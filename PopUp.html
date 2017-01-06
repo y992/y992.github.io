@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>弹出层</title>
+		<style>
+			html,body{height: 100%;overflow: hidden;}
+			body,div,h2{margin: 0;padding: 0;}
+			body{font: 12px/1.5 tahoma;}
+			center{margin-top: 10px;}
+			button{cursor: pointer;}
+			#overlay{width: 100%;height: 100%;background: #000;position: absolute;opacity: 0.5;filter: alpha(opacity=50);display:none ;}
+			#box{position: absolute;top: 50%;left: 50%;width: 400px;height: 200px;background: #fff;border: 4px solid #f90;margin: -102px 0 0 -202px;display:none ;}
+			h2{border-bottom: 3px solid #f90;padding: 5px;background: #fc0;font-size:12px;text-align: right;}
+			h2 span{color: #f90;border: 1px solid #f90;background: #fff;padding: 0 2px;cursor: pointer;}
+		</style>
+		<script>
+			window.onload = function ()
+			{
+				var obo = document.getElementById("box");
+				var oov = document.getElementById("overlay")
+				var btn = document.getElementsByTagName("button")[0];
+				var ocl = document.getElementById("close");
+				btn.onclick = function ()
+				{
+					oov.style.display = "block";
+					obo.style.display = "block";
+				}
+				ocl.onclick = function ()
+				{
+					oov.style.display = "none";
+					obo.style.display = "none";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="overlay"></div>
+		<div id="box"><h2><span id="close">×</span></h2></div>
+		<center><button>弹出层</button></center>
+	</body>
+</html>
