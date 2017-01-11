@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>播放列表</title>
+		<style>
+			body,div,ul,li,h2{margin: 0;padding: 0;}
+			body{font: 12px/1.5 tahoma;}
+			ul{list-style-type: none;}
+			#outer{border: 1px solid #aaa;width:200px;margin: 10px auto;}
+			#outer h2{border: 1px solid;font-size:14px ;color: #57646e;cursor: pointer;height: 30px;line-height:30px;font-weight: 400;padding-left: 10px;background: #ced3d7;
+			          url(img/ico.gif)180px 15px no-repeat;border-color: #fff #e9edf2;}
+			#outer h2.open{background-position:180px -12px ;}
+			#outer ul{border-top:1px solid #dee3e6;}
+			#outer li{line-height: 25px;height: 25px;vertical-align: top;}
+			#outer a{display: block;color: #6d7980;background: #e9edf2;padding: 0 10px;text-decoration: none;}
+			#outer a:hover{background: #FFF;text-decoration: underline;}
+		</style>
+		<script>
+			window.onload = function ()
+			{
+				var oh = document.getElementsByTagName("h2")[0];
+				var ou = document.getElementsByTagName("ul")[0];
+				oh.onclick = function (){
+					var style = ou.style;
+					style.display = style.display =="none"? "block":"none";
+					oh.className = style.display ="none"?"open":""
+					
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="outer">
+			<h2>播放列表...</h2>
+			<ul>
+				<li><a href="javascript:;">玩家之徒-蔡依林</a></li>
+				<li><a href="javascript:;">原谅我就是这样的女生-戴佩妮</a></li>
+				<li><a href="javascript:;">猜不透-丁当</a></li>
+				<li><a href="javascript:;">自导自演-周杰伦</a></li>
+				<li><a href="javascript:;">浪漫窝-玄子</a></li>
+				<li><a href="javascript:;">流年-王菲</a></li>
+			</ul>
+		</div>
+	</body>
+</html>
