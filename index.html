@@ -1,43 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-    	h1{text-align: center;}
-    	ul li{padding: 5px 0;}
-    </style>
-</head>
-<body>
-    <h1>个人练习主页</h1>
-    <ul>
-        <li><a href="ajaxTest.html">员工管理</a></li>
-        <li><a href="Control div 1.html">控制DIV属性</a></li>
-        <li><a href="changeSkin.html">网页换肤</a></li>
-        <li><a href="chuancan.html">传参练习</a></li>
-        <li><a href="control div.html">控制div颜色</a></li>
-        <li><a href="moveinmoveout.html">移进移出改变样式</a></li>
-        <li><a href="password prompt box.html">密码提示框</a></li>
-        <li><a href="baidu input method.html">百度输入法</a></li>
-        <li><a href="click show.html">点击显示innerHTML</a></li>
-        <li><a href="sum.html">求和</a></li>
-        <li><a href="PopUp.html">弹出层</a></li>
-        <li><a href="changeDIVcolor.html">传参改变属性的值</a></li>
-        <li><a href="imageList.html">改变图片透明度</a></li>
-        <li><a href="optionList.html">换页码显示</a></li>
-        <li><a href="calendar.html">简易年历</a></li>
-        <li><a href="playlist.html">播放列表</a></li>
-        <li><a href="displayimage.html">显示图标</a></li>
-        <li><a href="checkbox.html">复选框</a></li>
-        <li><a href="photoshow.html">轮播图</a></li>
-        <li><a href="typeof.html">用typeof查看数据</a></li>
-        <li><a href="parseInt.html">用parseInt解析数字，并求和</a></li>
-        <li><a href="addup.html">累加按钮，自+1</a></li>
-        <li><a href="add.html">累加，自+1</a></li>
-        <li><a href=" compare.html">比较大小</a></li>
-        <li><a href=" clock.html">简易时钟</a></li>
-        <li><a href="countdown.html">倒计时</a></li>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<title>在线简历</title>
+		<style>
+			body{
+				margin: 0;
+				padding: 0;
+				background-color:#474747 ;
+				}
+			.box{
+				width: 800px;
+				margin: 50px auto;
+				}
+			.left{
+				width: 40%;
+				height: 1000px;
+				float: left;
+				background: #94C0BE;
+					}
+			.right{
+				width: 60%;
+				height: 1000px;
+				float: left;
+				background: #DDDDDD;
+					}
+			#avatar{
+				content:"";
+	            display: block;
+	            height: 120px;
+	            width: 120px;
+	            border: 5px solid #fff;
+	            border-radius: 50%;
+	            /*margin-left: 80px;
+	            margin-top: 50px;*/
+	           	margin: 50px 90px;
+					}
+/*			#title{text-align: center;}
+*/			#title{font-size:3em;margin:0 0 0.5em 0;margin-top:0;color: #F8F8F8;text-align: center;font-family: "微软雅黑";}
+			.left1{
+				border-top:2px solid #474747 ;
+				border-bottom:1px solid #474747 ;
+				width: 200px;
+				text-align: center;
+				margin: 0 auto;
+				padding:10px ;
+				line-height: 10px;
+				color: #474747;
+				}
+			p{font-size: 12px;}
+/*			h4{letter-spacing: 3px;}
+*/			.left2{ 
+					width: 200px;
+					height: 200px;
+					margin: 30px auto;
+					}
+			.name{display:inline-block;zoom:1;width: 20%;color: #F8F8F8;font-size: 12px;text-align: right;}
+			.bg{width:70%;height:15px;border-radius:10px;background:#51938F;float: right;}
+			.main1{height:15px;border-radius: 10px 0 0 10px;background:#F0F8FF;width: 85%;}
+			.main2{height:15px;border-radius: 10px 0 0 10px;background:#F0F8FF;width: 80%;}
+			.main3{height:15px;border-radius: 10px 0 0 10px;background:#F0F8FF;width: 75%;}
+			.main4{height:15px;border-radius: 10px 0 0 10px;background:#F0F8FF;width: 70%;}
+			.main5{height:15px;border-radius: 10px 0 0 10px;background:#F0F8FF;width: 70%;}
+			.main6{height:15px;border-radius: 10px 0 0 10px;background:#F0F8FF;width: 60%;}
+			.main7{height:15px;border-radius: 10px 0 0 10px;background:#F0F8FF;width: 70%;}
+			.mes{margin-top: 10px;text-align: left;}
+			.button{
+					width: 200px;
+					height: 200px;
+					margin: 100px auto;
+					color: #474747;
+					background: #008000;
+ * 					}
+			.button a:link{color: #474747;text-decoration: none;}
+			.img-list li{list-style-type: none;float: left;}
+			
+			.right{font-family: "微软雅黑";}
+			.title{color: #666666;margin-left: 30px;margin-top: 50px;}
+			.project{width:400px ;height: 500px;margin: 0 30px;}
+			.right1{display: inline-block;background: #74ADAA;float: right;color: #F0F0F0;}
+			.p-mes{text-decoration: underline;color: #74ADAA;font-size: 16px;}
+			.p-mes1{color: #808080;}
+			.bt{color: #51938F;text-decoration: underline;}
+			.title1{color: #666666;margin-left: 30px;}
+			.jy p{margin: 0 30px;}
+			.p-mes2{font-size: 16px;color: #74ADAA;}
+			.p-mes3{color:#51938F;letter-spacing: 1.5px;}
+			.num-list{color: #808080;margin-left: 10px;}
+			.p-mes4{color: #808080;font-size: 14px;}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="left">
+				<div class="top">
+					<img id="avatar" src="img/avatar.jpg" />
+	                <h1 id="title">韦玉珍</h1>
+				</div>
+				<div class="left1">
+					<p>一腔热血的激情</p>
+					<p>一夜失眠的创意</p>
+					<p>一个像素的执着</p>
+					<h4>网站前端工程师</h4>
+				</div>
+				<div class="left2">
+					<p class="name">HTML</p>
+					<div class="bg">
+					    <div class="main1"></div>
+					</div>
+					<p class="name">CSS</p>
+					<div class="bg">
+					    <div class="main2"></div>
+					</div>
+					<p class="name">HTML5</p>
+					<div class="bg">
+					    <div class="main3"></div>
+					</div>
+					<p class="name">CSS3</p>
+					<div class="bg">
+					    <div class="main4"></div>
+					</div>
+					<p class="name">JavaScript</p>
+					<div class="bg">
+					    <div class="main5"></div>
+					</div>
+					<p class="name">jQeury</p>
+					<div class="bg">
+					    <div class="main6"></div>
+					</div>
+					<p class="name">ajax</p>
+					<div class="bg">
+					    <div class="main7"></div>
+					</div>
+					<!--<p class="mes1">我是一个充满热情、乐观执着的前端小白，对前端技术开发有着浓厚兴趣。希望能找到能发挥这些特长的工作！：）</p>-->
+				</div>
+				<div class="button">
+					<h4 class="">兴趣爱好</h4>
+					<ul class="img-list">
+						<li><img src=".png"></li>
+						<li><img src="1.png"></li>
+						<li><img src="2.png"></li>
+						<li><img src="3.png"></li>
 
-    </ul>
-</body>
+					</ul>
+				</div>
+			</div>
+			<div class="right">
+				<h3 class="title">项目经历</h3>
+				<div class="project">
+				<a class="p-mes"href="mailto:769025081@QQ.com" target="_blank">静态页面</a>
+				<div class="right1">HTML	&mdash;	CSS</div>
+				<p class="p-mes1">项目描述</p>
+				<br/>
+				<a class="p-mes"href="mailto:769025081@QQ.com" target="_blank">静态页面</a>
+				<div class="right1">HTML	&mdash;	CSS</div>
+				<p class="p-mes1">项目描述</p>
+				<br/>
+				<a class="p-mes"href="mailto:769025081@QQ.com" target="_blank">静态页面</a>
+				<div class="right1">HTML	&mdash;	CSS</div>
+				<p class="p-mes1">项目描述</p>
+				<br/>
+				<a class="p-mes"href="mailto:769025081@QQ.com" target="_blank">静态页面</a>
+				<div class="right1">HTML	&mdash;	CSS</div>
+				<p class="p-mes1">项目描述</p>
+				<br/>
+				<a class="p-mes"href="mailto:769025081@QQ.com" target="_blank">静态页面</a>
+				<div class="right1">HTML	&mdash;	CSS</div>
+				<p class="p-mes1">项目描述</p>
+				<br/>
+				<center><a class="bt"href="https://github.com/y992" target="_blank">到GitHub了解更多</a></center>
+				</div>
+				<div class="pj">
+					<h3 class="title1">自我评价</h3>
+					<ol class="num-list">
+						<li>熟悉HTML/HTML5/CSS/CSS3,熟悉页面架构和布局</li>
+						<li>能用js写基本动态效果，绑定事件， 用原生或jq操作dom</li>
+						<li>熟悉AJAX前后台数据通信</li>
+						<li>熟练使用相关工具HBuilder、Sublime Text、WebStorm</li>
+						<li>了解使用过前端类库Bootstrap，jQuery</li>
+						<li>对Web前端开发有浓厚的兴趣，较强的自学能力。</li>
+					</ol>
+				</div>
+				<div class="jy">
+					<h3 class="title">教育背景</h3>
+					<p class="p-mes2">广西国际商务职业技术学院</p>
+					<p class="p-mes3">2011年9月至2014年6月</p>
+					<p class="p-mes4">旅游管理系，酒店管理专业</p>
+				</div>
+			</div>
+		</div>
+
 </html>
