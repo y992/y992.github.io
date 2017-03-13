@@ -16,14 +16,14 @@ body {
 .carousel-inner img {
 	margin: 0 auto;
 }
-.tab-h2 {
+.tab1-h2 {
 	font-size: 20px;
 	text-align: center;
 	letter-spacing: 1px;
 	color: #0059b2;
 	margin-top: 60px;
 }
-.tab-p {
+.tab1-p {
 	font-size: 15px;
 	text-align: center;
 	letter-spacing: 1px;
@@ -47,30 +47,30 @@ body {
 .media-left{float: left;margin: 5px;}
 /* 小屏幕（平板，大于等于 768px） */
 @media (min-width: 768px) {
-  .tab-h2 {
+  .tab1-h2 {
     font-size: 26px;
   }
-  .tab-p {
+  .tab1-p {
     font-size: 16px;
   }
 }
 
 /* 中等屏幕（桌面显示器，大于等于 992px） */
 @media (min-width: 992px) {
-  .tab-h2 {
+  .tab1-h2 {
     font-size: 28px;
   }
-  .tab-p {
+  .tab1-p {
     font-size: 17px;
   }
 }
 
 /* 大屏幕（大桌面显示器，大于等于 1200px） */
 @media (min-width: 1200px) {
-  .tab-h2 {
+  .tab1-h2 {
     font-size: 30px;
   }
-  .tab-p {
+  .tab1-p {
     font-size: 18px;
   }
 }
@@ -80,6 +80,7 @@ body {
 	padding: 60px 20px;
 	text-align: center;
 	margin-top: 100px;
+	
 }
 .tab2 h3{margin-top: 100px ;}
 .tab2 img {
@@ -99,7 +100,7 @@ body {
 #footer {
 	background-color: #666;
 	border-top: 1px solid #ccc;
-	padding: 30px;
+	padding: 20px;
 	text-align: center;
 	color: #eee;
 }
