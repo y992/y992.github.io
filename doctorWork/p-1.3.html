@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<title>p1.3报到</title>
+		<style>
+			*{margin: 0;padding: 0;}
+			#outer{height: 1200px;background: #f0f0f0;}
+			.left{background: #ccc;width: 220px;height: 1200px;padding: 10px 0;text-align: center;float: left;}
+			.left h2{margin-top:100px;}
+			.l-mes1{font-size: 22px;margin: 30px 0;color: #000000;}
+			.l-mes2{color: #fff;font-size: 22px;background:#666666;padding: 30px 60px;}
+			.right{float: left;}
+			.right h1{margin: 60px;}
+			.right form{margin: 50px 50px 10px;}
+			.tb{text-align: center;background: #FFFFFF;margin: 20px 50px;}
+			.bottom{background:goldenrod;width: 620px;height: 200px;margin:60px 180px 0 ;padding: 20px;box-shadow:4px 4px 6px #666; 
+}
+		</style>
+	</head>
+	<body>
+		<div id="outer">
+			<div class="left">
+				<img src="u30.png"  />
+					<h2>远程门诊</h2>
+					<p class="l-mes1">报到</p>
+					<p class="l-mes2"2>患者就诊</p>
+			</div>
+			<div class="right">
+				<h1>远程医疗管理终端</h1>
+				<form>
+					<label>患者姓名</label>
+					<input type="text" width=""/>
+					<input type="submit" value="查询" />
+				</form>
+				<div class="">
+					<table width="1200" height="180" border="1" cellpadding="0" cellspacing="0" class="tb">
+					     <tr>
+					       <td>患者姓名</td>
+					       <td>患者年龄</td>
+					       <td>电话</td>
+					       <td>门诊时间</td>
+					       <td>核心医院</td>
+					       <td>核心医生</td>
+					       <td>状态</td>
+					     </tr>
+					      <tr>
+					       <td>张三(男)</td>
+					       <td>46</td>
+					       <td>12345678901</td>
+					       <td>2016-12-09 13:15:59</td>
+					       <td>南方医科大学南方医院</td>
+					       <td>董大力</td>
+					       <td>接诊状态</td>
+					     </tr>
+					      <tr>
+					       <td>张三(男)</td>
+					       <td>46</td>
+					       <td>12345678901</td>
+					       <td>2016-12-09 13:10:20</td>
+					       <td>南方医科大学南方医院</td>
+					       <td>董大力</td>
+					       <td>检查状态</td>
+					     </tr>
+					 </table>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+			<p>1、鼠标移动到一行时，高亮该行，鼠标变成手势，点击行中任意位置进入详情；</p>
+			<p>2、列表已付款的、还没有报到的、就诊日期大于等于当前日期的；</p>
+			<p>3、按门诊时间倒序列表。</p>
+		</div>
+	</body>
+</html>

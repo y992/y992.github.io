@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.shade{
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 999;
+				background: #000;
+				opacity: 0.5;
+			}
+			.contrim{
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				top: 50%;
+				left: 50%;
+				margin-top: -50px;
+				margin-left: -50px;
+				background: red;
+				z-index:1000 ;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="shade"></div>
+		<div class="contrim"></div>
+	</body>
+</html>
