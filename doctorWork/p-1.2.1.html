@@ -6,49 +6,180 @@
 		<title>p1.2.1报到</title>
 		<style>
 			*{margin: 0;padding: 0;}
-			#outer{height: 1200px;background: #f0f0f0;}
-			.left{background: #ccc;width: 220px;height: 1200px;padding: 10px 0;text-align: center;float: left;}
+			#outer{
+					height: 1200px;
+					background: #f0f0f0;
+					position: relative;
+					top: 0;
+					left:0 ;
+					width: 100%;
+					z-index: 666;
+					}
+			.left{
+					background: #ccc;
+					width:220px;
+					height:1200px;
+					padding: 10px 0;
+					text-align: center;
+					float: left;
+					}
 			.left h2{margin-top:100px;}
-			.l-mes1{color: #fff;font-size: 22px;background:#666666;padding: 30px 60px;}
-			.l-mes2{font-size: 22px;}
-			.right{float: left;}
-			.right h1{margin: 60px 80px;}
-			.right form{margin: 50px 50px 10px;}
-			.tb{text-align: center;background: #FFFFFF;margin: 20px 50px;}
-			.tb button{background: #FFFFFF;border: 1px solid #CCCCCC;padding: 5px 20px;border-radius: 10px;}
-			.bottom{background:goldenrod;width: 620px;height: 200px;margin:60px 180px 0 ;padding: 20px;box-shadow:4px 4px 6px #666;}
-			#win{width: 1000px;height: 40px;background: #F0F0F0;border: 1px solid #ccc;}
-			#win p{text-align: center;padding-top:10px;}
-			#close{float: right;border: 1px solid #CCCCCC;background: #FFFFFF;padding: 0 5px;cursor: pointer;}
-			.main{width: 1000px;height:300px ;background: #FFFFFF;}
-			.m-left{width: 50%;height:300px ;border: 1px solid #CCCCCC;float: left;padding: 30px;}
-			.m-right{width: 50%;height:300px ;border: 1px solid #CCCCCC;float: left;padding: 30px;}
-			.w-footer{width:1000px;height: 50px;background: #F0F0F0;border: 1px solid #CCCCCC;}
-			.w-footer button{background: #FFFFFF;margin:10px;border-radius: 5px;padding: 0 10px;float: right;}
-			#wrap{display: none;position:absolute;top:60px;left:80px;z-index: ;}
-			#w-bottom{width: 600px;height: 200px;border: 1px solid #CCCCCC;display:none ;}
-			.w-close{background: #F0F0F0;position: relative;margin-top: -10px;}
-			.w-close h4{position: relative;top: 0;left: 10px;padding: 5px 0;}
-			#close1{border: 1px solid #CCCCCC;background: #FFFFFF;cursor: pointer;position: absolute;top: 0;right: 0;padding: 0 5px;}
-			.w-mes{margin-left: 80px;padding-top: 20px;}
-			.w-btn{background: #FFFFFF;border-radius: 5px;padding: 0 50px;margin: 30px 60px;}
+			.l-mes1{
+					color: #fff;
+					font-size: 22px;
+					background:#666666;
+					padding: 30px 60px;
+					}
+			.l-mes2{
+					font-size: 22px;
+					}
+			.l-mes1 a{
+					text-decoration: none;
+					color: #fff;
+					}
+			.title a,.l-mes2 a{
+					text-decoration: none;
+					color: #000000;
+					}
+			.right{
+					float: left;
+					}
+			.right h1{
+					margin: 60px 80px;
+					}
+			.right form{
+					margin: 50px 50px 10px;
+					}
+			.tb{
+					text-align: center;
+					background: #FFFFFF;
+					margin: 20px 50px;
+					}
+			.tb button{
+					background: #FFFFFF;
+					border: 1px solid #CCCCCC;
+					padding: 5px 20px;
+					border-radius: 10px;
+					}
+			.bottom{
+					background:goldenrod;
+					width: 620px;
+					height: 200px;
+					margin:60px 180px 0 ;
+					padding: 20px;
+					box-shadow:4px 4px 6px #666;
+					}
+			#win{
+					width: 1000px;
+					height: 40px;
+					background: #F0F0F0;
+					border: 1px solid #ccc;
+					}
+			#win p{
+					text-align: center;
+					padding-top:10px;
+					}
+			#close{
+					float: right;
+					border: 1px solid #CCCCCC;
+					background: #FFFFFF;
+					padding: 0 5px;
+					cursor: pointer;
+					}
+			.main{
+					width: 1000px;
+					height:300px;
+					background: #FFFFFF;
+					}
+			.m-left{
+					width: 50%;
+					height:300px ;
+					border: 1px solid #CCCCCC;
+					float: left;
+					padding: 30px;
+					}
+			.m-right{
+					width: 50%;
+					height:300px ;
+					border: 1px solid #CCCCCC;
+					float: left;padding: 30px;
+					}
+			.w-footer{
+					width:1000px;
+					height: 50px;
+					background: #F0F0F0;
+					border: 1px solid #CCCCCC;
+					}
+			.btn2{
+					background: #FFFFFF;
+					margin:10px;
+					border-radius: 5px;
+					padding: 0 10px;
+					float: right;
+					}
+			#wrap{
+					display: none;
+					position:absolute;
+					top:60px;left:80px;
+					z-index:1000 ;
+					}
+			#w-bottom{
+					width: 600px;
+					height: 200px;
+					border: 1px solid #CCCCCC;
+					display:none;
+					position: absolute;
+					top:25%;left:25% ;
+					z-index: 1000;
+					background: #Fff;
+					}
+			.w-close{
+					background: #F0F0F0;
+					position: relative;
+					margin-top: -10px;
+					}
+			.w-close h4{
+					position: relative;
+					top: 0;
+					left: 10px;
+					padding: 5px 0;
+					}
+			#close1{
+					border: 1px solid #CCCCCC;
+					background: #FFFFFF;
+					cursor: pointer;
+					position: absolute;
+					top: 0;right: 0;
+					padding: 0 5px;
+					z-index: 1000;
+					}
+			.w-mes{
+					margin-left: 80px;
+					padding-top: 20px;
+					}
+			.w-btn{
+					background: #FFFFFF;
+					border-radius: 5px;
+					padding: 0 50px;
+					margin: 30px 60px;
+					}
 		</style>
 	</head>
 	<body>
 		<div id="outer">
 			<div class="left">
 				<img src="u30.png"  />
-					<h2>远程门诊</h2>
-					<p class="l-mes1">报到</p>
-					<p class="l-mes2"2>患者就医</p>
+					<h2 class="title"><a href="p-1.2.1.html">远程门诊</a></h2>
+					<p class="l-mes1"><a href="p-1.2.1.html">报到</a></p>
+					<p class="l-mes2"2><a href="p-1.3.1.html">患者就医</a></p>
 			</div>
 			<div class="right">
 				<h1>远程医疗管理终端</h1>
 				<form>
 					<label>开始日期</label>
-					<input type="text" value="日历控件" />
+					<input type="date" value="" />
 					<label>结束日期</label>
-					<input type="text" value="日历控件" />
+					<input type="date" value="" />
 					<input type="submit" value="查询" />
 				</form>
 				<div class="">
@@ -143,8 +274,8 @@
 	-->			</div>
 			</div>
 			<div class="w-footer">
-				<button>返回</button>
-				<button>患者报到</button>
+				<input type="button" value="返回" onclick="goblack()" class="btn2"/>
+				<input type="button" value="患者报到" onclick="bdopen()" class="btn2"/>
 			</div>
 		</div>
 		<!--确认报到-->
@@ -155,8 +286,8 @@
 						<span id="close1">×</span>
 					</div>
 					<p class="w-mes">已标识患者已报到。准备就诊吗？</p>
-					<button class="w-btn">确认</button>
-					<button class="w-btn">取消</button>
+					<input type="button" value="确认" onclick="q-open()" class="w-btn"/>
+					<input type="button" value="取消" onclick="w-open()" class="w-btn"/>
 					
 				</div>
 		</div>
@@ -172,15 +303,19 @@
 				{
 					owrap.style.display = "block";
 					owin.style.display = "block";
+					
 				};
 				oclose.onclick = function ()
 				{
 					owrap.style.display = "none";
 					owin.style.display = "none";
 				}
+//				//返回
+//				function goblack ()
+//				{
+//					window.history.back();
+//				}
 			};
-			//返回
-			
 		</script>
 	</body>
 </html>
