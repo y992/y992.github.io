@@ -173,7 +173,7 @@
 					border: 1px solid #666666;
 					margin: 0 10px;
 					height: 760px;
-					display:none ;
+					display: ;
 					position:absolute;
 					top:50px;
 					left:0px;
@@ -181,6 +181,46 @@
 					background: #fff;
 					}
 					
+			#w-bottom{
+					width: 600px;
+					height: 200px;
+					border: 1px solid #CCCCCC;
+					display:none;
+					position: absolute;
+					top:35%;left:35% ;
+					z-index: 1000;
+					background: #Fff;
+					}
+			.w-close{
+					background: #F0F0F0;
+					position: relative;
+					margin-top: -10px;
+					}
+			.w-close h4{
+					position: relative;
+					top: 0;
+					left: 10px;
+					padding: 5px 0;
+					}
+			#close1{
+					border: 1px solid #CCCCCC;
+					background: #FFFFFF;
+					cursor: pointer;
+					position: absolute;
+					top: 0;right: 0;
+					padding: 0 5px;
+					z-index: 1000;
+					}
+			.w-mes{
+					margin-left: 80px;
+					padding-top: 20px;
+					}
+			.w-btn{
+					background: #FFFFFF;
+					border-radius: 5px;
+					padding: 0 50px;
+					margin: 30px 60px;
+					}
 			#win1{width: 1000px;height: 40px;background: #F0F0F0;border: 1px solid #ccc;}
 			#win1 p{text-align: center;padding-top:10px;}
 			#close1{float: right;border: 1px solid #CCCCCC;background: #FFFFFF;padding: 0 5px;cursor: pointer;}
@@ -213,7 +253,7 @@
 							 	<a href="report.html"><span class="glyphicon glyphicon-list"></span>报到</a>
 							 </li>
 							 <li class="active">
-							 	<a href="text1jiuzhen.html"><span class="glyphicon glyphicon-fire"></span>就诊</a>
+							 	<a href="text1seeAdoctor.html"><span class="glyphicon glyphicon-fire"></span>就诊</a>
 							 </li>
 							 <li>
 							 	<a href="text1about.html"><span class="glyphicon glyphicon-question-sign"></span> 关于</a>
@@ -342,6 +382,17 @@
 				</div>
 			</div>
 		</div>
+		<div id="w-bottom">
+				<div class="w-top">
+					<div class="w-close">
+						<h4>提示</h4>
+						<span id="close1">×</span>
+					</div>
+					<p class="w-mes">是否确认诊断结果？</p>
+					<input type="button" value="确认" onclick="confirm()" class="w-btn"/>
+					<input type="button" value="取消" onclick="cancel()" class="w-btn"/>
+				</div>
+		</div>
 		<div id="wrap1">
 			<div id="win1">
 				<p>远程门诊<span id="close1">×</span></p>
@@ -383,6 +434,7 @@
 				var owin = document.getElementById("win");
 				var obtn = document.getElementsByTagName("button")[1];
 				var owrap1 = document.getElementById("wrap1");
+				var owbottom = document.getElementById("w-bottom");
 				obtn.onclick = function ()
 				{
 					owrap.style.display = "block";
@@ -397,20 +449,34 @@
 				
 				goblack = function ()
 				{
-					owrap.style.display = "none";
-					owin.style.display = "none";
+//					owrap.style.display = "none";
+//					owin.style.display = "none";
+					window.open("report.html");
 				}
+				//弹出确认框
 				submit = function ()
 				{
-					owrap1.style.display = "block";
+//					owrap1.style.display = "block";
 //					owin1.style.display = "block";
+					owbottom.style.display = "block";
+
 				}
-				goBack = function ()
+//				goBack = function ()
+//				{
+////					owbottom.style.display = "none";
+//					owrap1.style.display = "none";
+////					owin.style.display = "none";
+//				}
+				//取消确认诊断结果
+				cancel = function ()
 				{
-					owrap1.style.display = "none";
-//					owin.style.display = "none";
+					owbottom.style.display = "none";
 				}
-				
+				//确认诊断结果
+				confirm = function ()
+				{
+					window.open("seeAdoctor.html");
+				}
 			};
 		</script>
 	<footer id="footer">
