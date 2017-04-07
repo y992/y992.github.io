@@ -274,7 +274,7 @@
 								<input type="date" value="" />
 								<input type="submit" value="查询" />
 							</form>
-						<table class="table table-bordered ">
+						<table id="datas" class="table table-bordered ">
 	<!--					  <caption>边框表格布局</caption>
 	-->					  <thead>
 						    <tr>
@@ -288,45 +288,15 @@
 						      <th>操作</th>
 						    </tr>
 						  </thead>
-						    <tr>
-						      <td>张三(男)</td>
-						      <td>46</td>
-						      <td>12345678901</td>
-						      <td>2016-12-09 13:15:59</td>
-						      <td>2016-12-15 9:00:00	</td>
-						      <td>南山人民医院</td>
-						      <td>赵武</td>
-						      <td><button class="bd-btn">报到</button></td>
-						    </tr>
-						    <tr>
-						      <td>张三(男)</td>
-						      <td>46</td>
-						      <td>12345678901</td>
-						      <td>2016-12-09 13:15:59</td>
-						      <td>2016-12-15 9:00:00	</td>
-						      <td>南山人民医院</td>
-						      <td>赵武</td>
-						      <td><button class="bd-btn">报到</button></td>
-						    </tr>
-						    <tr>
-						      <td>张三(男)</td>
-						      <td>46</td>
-						      <td>12345678901</td>
-						      <td>2016-12-09 13:15:59</td>
-						      <td>2016-12-15 9:00:00	</td>
-						      <td>南山人民医院</td>
-						      <td>赵武</td>
-						      <td><button class="bd-btn">报到</button></td>
-						    </tr>
-						     <tr>
-						      <td>张三(男)</td>
-						      <td>46</td>
-						      <td>12345678901</td>
-						      <td>2016-12-09 13:15:59</td>
-						      <td>2016-12-15 9:00:00	</td>
-						      <td>南山人民医院</td>
-						      <td>赵武</td>
-						      <td><button class="bd-btn">报到</button></td>
+						    <tr id="template">
+						      <td id="NameId">张三(男)</td>
+						      <td id="AgeId">46</td>
+						      <td id="PhoneId">12345678901</td>
+						      <td id="ApplyDate">2016-12-09 13:15:59</td>
+						      <td id="WatchDate">2016-12-15 9:00:00	</td>
+						      <td id="Hospital">南山人民医院</td>
+						      <td id="DocotrName">赵武</td>
+						      <td id="State"><button class="bd-btn">报到</button></td>
 						    </tr>
 						  </tbody>
 						</table>
@@ -419,6 +389,34 @@
 				confirm = function (){
 					window.open("text1jiuzhen.html");
 				}
+				
+				$.ajax({ 
+                        type: "get", 
+                        url: "http://localhost:3000/reportInfo", 
+                        dataType: "json", 
+                        success: function (data) { 
+                        		console.log(data);
+                        		$.each(data, function(index, item){
+                        			var row = $("#template").clone();
+                        			row.find("#NameId").text(item.name);
+                        			row.find("#AgeId").text(item.age);
+                        			row.find("#PhoneId").text(item.phone);
+                        			row.find("#ApplyDate").text(item.applyTime);
+                        			row.find("#WatchDate").text(item.watchTime);
+                        			row.find("#DocotrName").text(item.docotr);
+                        			row.find("#Hospital").text(item.hospital);
+                        			row.find(".bd-btn").text(item.state);
+								$(".bd-btn").click(function(){
+									owrap.style.display = "block";
+									owin.style.display = "block";
+								});
+                        			row.appendTo("#datas");//添加到模板的容器中
+                        		});
+                        }, 
+                        error: function (XMLHttpRequest, textStatus, errorThrown) { 
+                                alert(errorThrown); 
+                        } 
+                });
 
 			};
 		</script>
