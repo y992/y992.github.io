@@ -8,7 +8,7 @@
 			"watchTime":"2016-12-10 13:15:59",
 			"hospital":"南山人民医院",
 			"doctor":"赵武",
-			"state":"报道"
+			"state":"报到"
 		},
 		{
 			"name":"张三",
@@ -18,7 +18,7 @@
 			"watchTime":"2016-12-10 13:15:59",
 			"hospital":"南山人民医院",
 			"doctor":"赵武",
-			"state":"报道"
+			"state":"报到"
 		},
 		{
 			"name":"张三",
@@ -28,7 +28,7 @@
 			"watchTime":"2016-12-10 13:15:59",
 			"hospital":"南山人民医院",
 			"doctor":"赵武",
-			"state":"报道"
+			"state":"报到"
 		},
 		{
 			"name":"张三",
@@ -38,7 +38,8 @@
 			"watchTime":"2016-12-10 13:15:59",
 			"hospital":"南山人民医院",
 			"doctor":"赵武",
-			"state":"报道"
+			"state":"报到"
 		}
 		]
 }
+

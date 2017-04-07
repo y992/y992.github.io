@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -105,7 +106,7 @@
 			.m-right1{width: 50%;height:350px ;border: 1px solid #CCCCCC;float: left;padding: 10px 30px;}
 			.w-footer1{width:1000px;height: 50px;background: #F0F0F0;border: 1px solid #CCCCCC;}
 			.close2{background: #FFFFFF;margin:10px;border-radius: 5px;padding: 0 10px;float: right;}
-			#wrap1{display: none;position:absolute;top:160px;left:220px;z-index: 1000;}
+			#wrap1{display: none;position:absolute;top:160px;left:200px;z-index: 1000;}
 			</style>
 	</head>
 	<body>
@@ -166,10 +167,10 @@
 								<input type="text" value="" />
 								<input type="submit" value="查询" />
 							</form>
-						<table class="table table-bordered ">
+						<table class="table table-bordered " id="tab-dates">
 	<!--					  <caption>边框表格布局</caption>
 	-->					  <thead>
-						     <tr>
+						 <tr>
 					       <td>患者姓名</td>
 					       <td>患者年龄</td>
 					       <td>电话</td>
@@ -178,24 +179,17 @@
 					       <td>核心医生</td>
 					       <td>状态</td>
 					     </tr>
-					      <tr>
-					       <td>张三(男)</td>
-					       <td>46</td>
-					       <td>12345678901</td>
-					       <td>2016-12-09 13:15:59</td>
-					       <td>南方医科大学南方医院</td>
-					       <td>董大力</td>
-					       <td><button class="bd-btn">接诊状态</button></td>
-					     </tr>
-					      <tr>
-					       <td>张三(男)</td>
-					       <td>46</td>
-					       <td>12345678901</td>
-					       <td>2016-12-09 13:10:20</td>
-					       <td>南方医科大学南方医院</td>
-					       <td>董大力</td>
-					       <td><button class="bd-btn">检查状态</button></td>
-					     </tr>
+					     </thead>
+					      
+					     <tr id="template1">
+						      <td id="NameId1"></td>
+						      <td id="AgeId1"></td>
+						      <td id="PhoneId1"></td>
+						      <td id="OutpatientDate1"></td>
+						      <td id="Hospital1"></td>
+						      <td id="DoctorName1"></td>
+						      <td id="status1"><button class="bd-btn"></button></td>
+						    </tr>
 						  </tbody>
 						</table>
 					</div>
@@ -243,16 +237,13 @@
 				var oclose1 = document.getElementById("close1");
 				var owin1 = document.getElementById("win1");
 				var obtn = document.getElementsByClassName("bd-btn");
-				
-				//
-				var confire_dialog = document.getElementById("w-bottom");
-				for (var i=0; i<obtn.length; i++) {
+				for (var i=0; i<obtn.length; i++) 
+				{
 					obtn[i].onclick = function ()
 						{
 							owrap1.style.display = "block";
 							owin1.style.display = "block";
 						};	
-						
 				}
 				oclose1.onclick = function ()
 				{
@@ -263,6 +254,35 @@
 				{
 					owrap1.style.display = "none";
 				}
+				$.ajax({ 
+                        type: "get", 
+                        url: "http://localhost:3000/test", 
+                        dataType: "jsonp", 
+                        success: function (data) {
+                        	$.each(data, function(index, item){
+                        			if (index == 0) {
+                        				var row = $("#template1");
+                        			} else {
+                        				var row = $("#template1").clone();
+                        			}
+                        			row.find("#NameId1").text(item.name1);
+                        			row.find("#AgeId1").text(item.age1);
+                        			row.find("#PhoneId1").text(item.phone1);
+                        			row.find("#OutpatientDate1").text(item.outpatientTime1);
+                        			row.find("#DoctorName1").text(item.doctor1);
+                        			row.find("#Hospital1").text(item.hospital1);
+                        			row.find(".bd-btn").text(item.status1);
+                        			row.appendTo("#tab-dates");//添加到模板的容器中
+                        		});
+								$(".bd-btn").click(function(){
+									owrap1.style.display = "block";
+									owin1.style.display = "block";
+								});
+							},
+	                        error: function (XMLHttpRequest, textStatus, errorThrown) { 
+	                                alert(errorThrown); 
+	                        } 
+	                });
 				
 			};
 		</script>

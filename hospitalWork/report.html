@@ -5,8 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
 		<title>p-1.2.1报到</title>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<!--		<link rel="stylesheet" href="daohang.css">
--->		<style>
+		<style>
 				.jumbotron {
 					background-image: url();
 					margin: 50px 0 0 0;
@@ -51,7 +50,7 @@
 				.about tr,th,td{text-align: center;}
 				.about h1{margin: 60px 0;}
 				.about form{margin: 20px 0;}
-				.about table{margin-bottom: 60px;margin-left: -16px;}
+				.about table{margin-left: -16px;}
 				*{margin: 0;padding: 0;}
 			#outer{
 					height: 1200px;
@@ -157,6 +156,7 @@
 					background: #F0F0F0;
 					border: 1px solid #CCCCCC;
 					}
+			
 			.btn2{
 					background: #FFFFFF;
 					margin:10px;
@@ -169,7 +169,7 @@
 			#wrap{
 					display:none;
 					position:absolute;
-					top:60px;left:80px;
+					top:180px;left:180px;
 					z-index:1000 ;
 					}
 			#w-bottom{
@@ -289,16 +289,15 @@
 						    </tr>
 						  </thead>
 						    <tr id="template">
-						      <td id="NameId">张三(男)</td>
-						      <td id="AgeId">46</td>
-						      <td id="PhoneId">12345678901</td>
-						      <td id="ApplyDate">2016-12-09 13:15:59</td>
-						      <td id="WatchDate">2016-12-15 9:00:00	</td>
-						      <td id="Hospital">南山人民医院</td>
-						      <td id="DocotrName">赵武</td>
-						      <td id="State"><button class="bd-btn">报到</button></td>
+						      <td id="NameId"></td>
+						      <td id="AgeId"></td>
+						      <td id="PhoneId"></td>
+						      <td id="ApplyDate"></td>
+						      <td id="WatchDate"></td>
+						      <td id="Hospital"></td>
+						      <td id="DocotrName"></td>
+						      <td id="State"><button class="bd-btn"></button></td>
 						    </tr>
-						  </tbody>
 						</table>
 					</div>
 				</div>
@@ -359,17 +358,18 @@
 				var owrap = document.getElementById("wrap");
 				var oclose = document.getElementById("close");
 				var owin = document.getElementById("win");
-				var obtn = document.getElementsByClassName("bd-btn");
+//				var obtn = document.getElementsByClassName("bd-btn");
 				
 				//确认对话框
 				var confire_dialog = document.getElementById("w-bottom");
-				for (var i=0; i<obtn.length; i++) {
-					obtn[i].onclick = function ()
-						{
-							owrap.style.display = "block";
-							owin.style.display = "block";
-						};	
-				}
+//				for (var i=0; i<obtn.length; i++) {
+//					
+//					obtn[i].onclick = function ()
+//						{
+//							owrap.style.display = "block";
+//							owin.style.display = "block";
+//						};	
+//				}
 
 				oclose.onclick = function ()
 				{
@@ -393,25 +393,28 @@
 				$.ajax({ 
                         type: "get", 
                         url: "http://localhost:3000/reportInfo", 
-                        dataType: "json", 
+                        dataType: "jsonp", 
                         success: function (data) { 
-                        		console.log(data);
                         		$.each(data, function(index, item){
-                        			var row = $("#template").clone();
+                        			if (index == 0) {
+                        				var row = $("#template");
+                        			} else {
+                        				var row = $("#template").clone();
+                        			}
                         			row.find("#NameId").text(item.name);
                         			row.find("#AgeId").text(item.age);
                         			row.find("#PhoneId").text(item.phone);
                         			row.find("#ApplyDate").text(item.applyTime);
                         			row.find("#WatchDate").text(item.watchTime);
-                        			row.find("#DocotrName").text(item.docotr);
+                        			row.find("#DocotrName").text(item.doctor);
                         			row.find("#Hospital").text(item.hospital);
                         			row.find(".bd-btn").text(item.state);
-								$(".bd-btn").click(function(){
-									owrap.style.display = "block";
-									owin.style.display = "block";
-								});
                         			row.appendTo("#datas");//添加到模板的容器中
                         		});
+                        		$(".bd-btn").click(function(){
+									owrap.style.display = "block";
+									owin.style.display = "block";
+							});
                         }, 
                         error: function (XMLHttpRequest, textStatus, errorThrown) { 
                                 alert(errorThrown); 
