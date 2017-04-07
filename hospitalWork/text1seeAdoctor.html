@@ -432,7 +432,7 @@
 				var owrap = document.getElementById("wrap");
 				var oclose = document.getElementById("close");
 				var owin = document.getElementById("win");
-				var obtn = document.getElementsByTagName("button")[1];
+				var obtn = document.getElementsByTagName("button")[0];
 				var owrap1 = document.getElementById("wrap1");
 				var owbottom = document.getElementById("w-bottom");
 				obtn.onclick = function ()
@@ -440,11 +440,12 @@
 					owrap.style.display = "block";
 					owin.style.display = "block";
 				};
-				oclose.onclick = function ()
-				{
-					owrap.style.display = "none";
-					owin.style.display = "none";
-				}
+				//关闭
+//				oclose.onclick = function ()
+//				{
+//					owrap.style.display = "none";
+//					owin.style.display = "none";
+//				}
 				//
 				
 				goblack = function ()

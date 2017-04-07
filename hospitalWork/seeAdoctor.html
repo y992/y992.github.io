@@ -185,7 +185,7 @@
 					       <td>2016-12-09 13:15:59</td>
 					       <td>南方医科大学南方医院</td>
 					       <td>董大力</td>
-					       <td><button>接诊状态</button></td>
+					       <td><button class="bd-btn">接诊状态</button></td>
 					     </tr>
 					      <tr>
 					       <td>张三(男)</td>
@@ -194,7 +194,7 @@
 					       <td>2016-12-09 13:10:20</td>
 					       <td>南方医科大学南方医院</td>
 					       <td>董大力</td>
-					       <td><button>检查状态</button></td>
+					       <td><button class="bd-btn">检查状态</button></td>
 					     </tr>
 						  </tbody>
 						</table>
@@ -239,23 +239,26 @@
 		<script>
 			window.onload = 	function ()
 			{   
-				var obtn = document.getElementsByTagName("button")[1];
 				var owrap1 = document.getElementById("wrap1");
 				var oclose1 = document.getElementById("close1");
 				var owin1 = document.getElementById("win1");
-				var owbottom = document.getElementById("w-bottom");
-				obtn.onclick = function ()
-				{
-					owrap1.style.display = "block";
-					owin1.style.display = "block";
-				};
+				var obtn = document.getElementsByClassName("bd-btn");
+				
+				//
+				var confire_dialog = document.getElementById("w-bottom");
+				for (var i=0; i<obtn.length; i++) {
+					obtn[i].onclick = function ()
+						{
+							owrap1.style.display = "block";
+							owin1.style.display = "block";
+						};	
+						
+				}
 				oclose1.onclick = function ()
 				{
 					owrap1.style.display = "none";
 					owin1.style.display = "none";
 				}
-				//
-				
 				goBack = function ()
 				{
 					owrap1.style.display = "none";
