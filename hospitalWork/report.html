@@ -1,438 +1,167 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
-		<title>p-1.2.1报到</title>
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<style>
-				.jumbotron {
-					background-image: url();
-					margin: 50px 0 0 0;
-					color: #ccc;
-				}
-				.jumbotron h1 {
-					font-size: 26px;
-					padding: 0 0 0 20px;
-				}
-				.jumbotron h4 {
-					font-size: 15px;
-					padding: 0 0 0 20px;
-				}
-				#about {
-					background-color: #eee;
-					padding: 40px 15px;
-				}
-				#about a {
-					color: #0059b2;
-				}
-				#about .about {
-					background-color: #fff;
-					box-shadow: 2px 2px 3px #ccc;
-				}
-				#about h3 {
-					color: #333;
-					font-size: 18px;
-					border-bottom: 1px solid #eee;
-					padding: 20px 0;
-					margin: 0 0 10px 0;
-				}
-				#about p {
-					line-height: 2;
-					font-size: 13px;
-				}
-				.about button{
-					background: #FFFFFF;
-					border: 1px solid #CCCCCC;
-/*					padding: 5px 20px;
-*/					border-radius: 10px;
-					}
-				.about tr,th,td{text-align: center;}
-				.about h1{margin: 60px 0;}
-				.about form{margin: 20px 0;}
-				.about table{margin-left: -16px;}
-				*{margin: 0;padding: 0;}
-			#outer{
-					height: 1200px;
-					background: #f0f0f0;
-					position: relative;
-					top: 0;
-					left:0 ;
-					width: 100%;
-					z-index: 666;
-					}
-			.left{
-					background: #ccc;
-					width:220px;
-					height:1200px;
-					padding: 10px 0;
-					text-align: center;
-					float: left;
-					}
-			.left h2{margin-top:100px;}
-			.l-mes1{
-					color: #fff;
-					font-size: 22px;
-					background:#666666;
-					padding: 30px 60px;
-					}
-			.l-mes2{
-					font-size: 22px;
-					}
-			.l-mes1 a{
-					text-decoration: none;
-					color: #fff;
-					}
-			.title a,.l-mes2 a{
-					text-decoration: none;
-					color: #000000;
-					}
-			.right{
-					float: left;
-					}
-			.right h1{
-					margin: 60px 80px;
-					}
-			.right form{
-					margin: 50px 50px 10px;
-					}
-			/*.tb{
-					text-align: center;
-					background: #FFFFFF;
-					margin: 20px 50px;
-					}*/
-			.about button{
-					background: #FFFFFF;
-					border: 1px solid #CCCCCC;
-					padding: 5px 20px;
-					border-radius: 10px;
-					}
-			.bottom{
-					background:goldenrod;
-					width: 620px;
-					height: 200px;
-					margin:60px 180px 0 ;
-					padding: 20px;
-					box-shadow:4px 4px 6px #666;
-					}
-			#win{
-					width: 1000px;
-					height: 40px;
-					background: #F0F0F0;
-					border: 1px solid #ccc;
-					}
-			#win p{
-					text-align: center;
-					padding-top:10px;
-					}
-			#close{
-					float: right;
-					border: 1px solid #CCCCCC;
-					background: #FFFFFF;
-					padding: 0 5px;
-					cursor: pointer;
-					}
-			.main{
-					width: 1000px;
-					height:300px;
-					background: #FFFFFF;
-					}
-			.m-left{
-					width: 50%;
-					height:300px ;
-					border: 1px solid #CCCCCC;
-					float: left;
-					padding: 30px;
-					}
-			.m-right{
-					width: 50%;
-					height:300px ;
-					border: 1px solid #CCCCCC;
-					float: left;padding: 30px;
-					}
-			.w-footer{
-					width:1000px;
-					height: 50px;
-					background: #F0F0F0;
-					border: 1px solid #CCCCCC;
-					}
-			
-			.btn2{
-					background: #FFFFFF;
-					margin:10px;
-					border-radius: 5px;
-					padding: 0 10px;
-					float: right;
-					}
-/*					p-1.2.1报到弹出框
-*/
-			#wrap{
-					display:none;
-					position:absolute;
-					top:180px;left:180px;
-					z-index:1000 ;
-					}
-			#w-bottom{
-					width: 600px;
-					height: 200px;
-					border: 1px solid #CCCCCC;
-					display:none;
-					position: absolute;
-					top:25%;left:25% ;
-					z-index: 1000;
-					background: #Fff;
-					}
-			.w-close{
-					background: #F0F0F0;
-					position: relative;
-					margin-top: -10px;
-					}
-			.w-close h4{
-					position: relative;
-					top: 0;
-					left: 10px;
-					padding: 5px 0;
-					}
-			#close1{
-					border: 1px solid #CCCCCC;
-					background: #FFFFFF;
-					cursor: pointer;
-					position: absolute;
-					top: 0;right: 0;
-					padding: 0 5px;
-					z-index: 1000;
-					}
-			.w-mes{
-					margin-left: 80px;
-					padding-top: 20px;
-					}
-			.w-btn{
-					background: #FFFFFF;
-					border-radius: 5px;
-					padding: 0 50px;
-					margin: 30px 60px;
-					}
-			</style>
-	</head>
-	<body>
-	<nav class="navbar navbar-default navbar-fixed-top">
-					<div class="container">
-						<div class="navbar-header">
-						<a href="#" class="navbar-brand" style="padding: 0;margin: 0;"><img src="u30.png" alt="医生工作站" width="160px" height="50px"></a>
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-						<span class="sr-only">切换导航</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						</button>
-					</div>
-					<div class="collapse navbar-collapse" id="navbar-collapse">
-						<ul class="nav navbar-nav navbar-right " style="margin-top:0px;">
-							 <li>
-							 	<a href="index.html"><span class="glyphicon glyphicon-home"></span>首页</a>
-							 </li>
-							 <li class="active">
-							 	<a href="report.html"><span class="glyphicon glyphicon-list"></span>报到</a>
-							 </li>
-							 <li>
-							 	<a href="text1seeAdoctor.html"><span class="glyphicon glyphicon-fire"></span>就诊</a>
-							 </li>
-							 <li>
-							 	<a href="text1about.html"><span class="glyphicon glyphicon-question-sign"></span> 关于</a>
-							 </li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-	<div class='jumbotron'>
-		<div class='container'>
-			<hgroup>
-				<h1>报到</h1>
-				<h4>南方医院的报到...</h4>
-			</hgroup>
-		</div>
-		
-	</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <title>p-1.2.1报到</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/report.css">
+    <script src="js/report.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand" style="padding: 0;margin: 0;"><img src="u30.png" alt="医生工作站" width="160px"
+                                                                                height="50px"></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target=".navbar-responsive-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right " style="margin-top:0px;">
+                <li>
+                    <a href="index.html"><span class="glyphicon glyphicon-home"></span>首页</a>
+                </li>
+                <li class="active">
+                    <a href="report.html"><span class="glyphicon glyphicon-list"></span>报到</a>
+                </li>
+                <li>
+                    <a href="text1seeAdoctor.html"><span class="glyphicon glyphicon-fire"></span>就诊</a>
+                </li>
+                <li>
+                    <a href="text1about.html"><span class="glyphicon glyphicon-question-sign"></span> 关于</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class='jumbotron'>
+    <div class='container'>
+        <hgroup>
+            <h1>报到</h1>
+            <h4>南方医院的报到...</h4>
+        </hgroup>
+    </div>
 
-	<div id="about">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 hidden-sm hidden-xs">
-					<!--<div class="list-group">
-						<a class="list-group-item" href="daohang.html">远程门诊</a>
-						<a class="list-group-item" href="p-1.2.1.html">报到</a>
-						<a class="list-group-item" href="p-1.3.1.html">患者就诊</a>
-					</div>-->
-				</div>
-				<div class="col-md-12 about">
-					<div class="container">
-						<h1>远程医疗管理终端</h1>
-							<form>
-								<label>开始日期</label>
-								<input type="date" value="" />
-								<label>结束日期</label>
-								<input type="date" value="" />
-								<input type="submit" value="查询" />
-							</form>
-						<table id="datas" class="table table-bordered ">
-	<!--					  <caption>边框表格布局</caption>
-	-->					  <thead>
-						    <tr>
-						      <th>患者姓名</th>
-						      <th>患者年龄</th>
-						      <th>电话</th>
-						      <th>申请时间</th>
-						      <th>门诊时间</th>
-						      <th>协作医院</th>
-						      <th>协作医生</th>
-						      <th>操作</th>
-						    </tr>
-						  </thead>
-						    <tr id="template">
-						      <td id="NameId"></td>
-						      <td id="AgeId"></td>
-						      <td id="PhoneId"></td>
-						      <td id="ApplyDate"></td>
-						      <td id="WatchDate"></td>
-						      <td id="Hospital"></td>
-						      <td id="DocotrName"></td>
-						      <td id="State"><button class="bd-btn"></button></td>
-						    </tr>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!---->
-	<div id="wrap">
-			<div id="win">
-				<p>远程门诊<span id="close">×</span></p>
-			</div>
-			<div class="main">
-				<div class="m-left">
-					<p>申请时间：2016-12-09 13:15:59</p>
-					<p> 挂号费：￥600.00</p>
-					<p>状态：已完成</p>
-					<p>姓名：张三</p>
-					<p>性别：男</p>
-					<p>年龄：46</p>
-					<p>电话：12345678901</p>
-				</div>
-				<div class="m-right">
-	<!--				<div class="r-div1">
-	-->					<p>核心医院：第三军医大学新桥医院</p>
-						<p>科室：内科/呼吸内科</p>
-						<p>专家：吴国民</p>
-						<p>门诊时间：2016-12-10 9:00:00</p>
-					<!--</div>
-					<div class="r-div2">-->
-						<p>协作医院：深圳市罗湖区人民医院</p>
-						<p>科室：门诊部/内科</p>
-						<p>医生：老张</p>
-						<p>电话：23456789011</p>
-	<!--				</div>
-	-->			</div>
-			</div>
-			<div class="w-footer">
-				<input type="button" value="返回" onclick="goblack()" class="btn2"/>
-				<input type="button" value="患者报到" onclick="patientReport()" class="btn2"/>
-			</div>
-			</div>
-		<!--确认报到-->
-		<div id="w-bottom">
-				<div class="w-top">
-					<div class="w-close">
-						<h4>提示</h4>
-						<span id="close1">×</span>
-					</div>
-					<p class="w-mes">已标识患者已报到。准备就诊吗？</p>
-					<input type="button" value="确认" onclick="confirm()" class="w-btn"/>
-					<input type="button" value="取消" onclick="cancel()" class="w-btn"/>
-				</div>
-		</div>
-		<script>
+</div>
 
-			window.onload = 	function ()
-			{   //弹出报到框
-				var owrap = document.getElementById("wrap");
-				var oclose = document.getElementById("close");
-				var owin = document.getElementById("win");
-//				var obtn = document.getElementsByClassName("bd-btn");
-				
-				//确认对话框
-				var confire_dialog = document.getElementById("w-bottom");
-//				for (var i=0; i<obtn.length; i++) {
-//					
-//					obtn[i].onclick = function ()
-//						{
-//							owrap.style.display = "block";
-//							owin.style.display = "block";
-//						};	
-//				}
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 hidden-sm hidden-xs">
+                <!--<div class="list-group">
+                    <a class="list-group-item" href="daohang.html">远程门诊</a>
+                    <a class="list-group-item" href="p-1.2.1.html">报到</a>
+                    <a class="list-group-item" href="p-1.3.1.html">患者就诊</a>
+                </div>-->
+            </div>
+            <div class="col-md-12 about">
+                <div class="container">
+                    <h1>远程医疗管理终端</h1>
+                    <form>
+                        <label>开始日期</label>
+                        <input type="date" value=""/>
+                        <label>结束日期</label>
+                        <input type="date" value=""/>
+                        <input type="submit" value="查询"/>
+                    </form>
+                    <table id="datas" class="table table-bordered ">
+                        <!--					  <caption>边框表格布局</caption>
+                        -->
+                        <thead>
+                        <tr>
+                            <th>患者姓名</th>
+                            <th>患者年龄</th>
+                            <th>电话</th>
+                            <th>申请时间</th>
+                            <th>门诊时间</th>
+                            <th>协作医院</th>
+                            <th>协作医生</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tr id="template">
+                            <td id="NameId"></td>
+                            <td id="AgeId"></td>
+                            <td id="PhoneId"></td>
+                            <td id="ApplyDate"></td>
+                            <td id="WatchDate"></td>
+                            <td id="Hospital"></td>
+                            <td id="DocotrName"></td>
+                            <td id="State">
+                                <button class="bd-btn"></button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---->
+<div id="wrap">
+    <div id="win">
+        <p>远程门诊<span id="close">×</span></p>
+    </div>
+    <div class="main">
+        <div class="m-left">
+            <p>申请时间：2016-12-09 13:15:59</p>
+            <p> 挂号费：￥600.00</p>
+            <p>状态：已完成</p>
+            <p>姓名：张三</p>
+            <p>性别：男</p>
+            <p>年龄：46</p>
+            <p>电话：12345678901</p>
+        </div>
+        <div class="m-right">
+            <!--				<div class="r-div1">
+            --> <p>核心医院：第三军医大学新桥医院</p>
+            <p>科室：内科/呼吸内科</p>
+            <p>专家：吴国民</p>
+            <p>门诊时间：2016-12-10 9:00:00</p>
+            <!--</div>
+            <div class="r-div2">-->
+            <p>协作医院：深圳市罗湖区人民医院</p>
+            <p>科室：门诊部/内科</p>
+            <p>医生：老张</p>
+            <p>电话：23456789011</p>
+            <!--				</div>
+            -->            </div>
+    </div>
+    <div class="w-footer">
+        <input type="button" value="返回" onclick="goblack()" class="btn2"/>
+        <input type="button" value="患者报到" onclick="patientReport()" class="btn2"/>
+    </div>
+</div>
+<!--确认报到-->
+<div id="w-bottom">
+    <div class="w-top">
+        <div class="w-close">
+            <h4>提示</h4>
+            <span id="close1">×</span>
+        </div>
+        <p class="w-mes">已标识患者已报到。准备就诊吗？</p>
+        <input type="button" value="确认" onclick="location.href='text1seeAdoctor.html'" class="w-btn"/>
+        <input type="button" value="取消" onclick="cancel()" class="w-btn"/>
+    </div>
+</div>
 
-				oclose.onclick = function ()
-				{
-					owrap.style.display = "none";
-					owin.style.display = "none";
-				}
-				goblack = function (){
-					owrap.style.display = "none";
-					owin.style.display = "none";
-				}
-				patientReport = function() {
-					confire_dialog.style.display = "block"
-				}
-				cancel = function() {
-					confire_dialog.style.display = "none";
-				}
-				confirm = function (){
-					window.open("text1seeAdoctor.html");
-				}
-				
-				$.ajax({ 
-                        type: "get", 
-                        url: "http://localhost:3000/reportInfo", 
-                        dataType: "jsonp", 
-                        success: function (data) { 
-                        		$.each(data, function(index, item){
-                        			if (index == 0) {
-                        				var row = $("#template");
-                        			} else {
-                        				var row = $("#template").clone();
-                        			}
-                        			row.find("#NameId").text(item.name);
-                        			row.find("#AgeId").text(item.age);
-                        			row.find("#PhoneId").text(item.phone);
-                        			row.find("#ApplyDate").text(item.applyTime);
-                        			row.find("#WatchDate").text(item.watchTime);
-                        			row.find("#DocotrName").text(item.doctor);
-                        			row.find("#Hospital").text(item.hospital);
-                        			row.find(".bd-btn").text(item.state);
-                        			row.appendTo("#datas");//添加到模板的容器中
-                        		});
-                        		$(".bd-btn").click(function(){
-									owrap.style.display = "block";
-									owin.style.display = "block";
-							});
-                        }, 
-                        error: function (XMLHttpRequest, textStatus, errorThrown) { 
-                                alert(errorThrown); 
-                        } 
-                });
+<footer id="footer">
+    <div class="container">
+        <!--<p>企业培训 | 合作事宜 | 版权投诉</p>
+        <p>苏ICP 备12345678. © 2009-2016 南方. Powered by Bootstrap.</p>-->
+    </div>
+</footer>
 
-			};
-		</script>
-	<footer id="footer">
-		<div class="container">
-			<!--<p>企业培训 | 合作事宜 | 版权投诉</p>
-			<p>苏ICP 备12345678. © 2009-2016 南方. Powered by Bootstrap.</p>-->
-		</div>
-	</footer>
 
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
- 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
-	<script type="text/javascript">
-	</script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+</script>
 </body>
 </html>

@@ -6,108 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
 		<title>p-1.3.1就诊</title>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<style>
-				.jumbotron {
-					background-image: url();
-					margin: 50px 0 0 0;
-					color: #ccc;
-				}
-				.jumbotron h1 {
-					font-size: 26px;
-					padding: 0 0 0 20px;
-				}
-				.jumbotron h4 {
-					font-size: 15px;
-					padding: 0 0 0 20px;
-				}
-				#about {
-					background-color: #eee;
-					padding: 40px 15px;
-				}
-				#about a {
-					color: #0059b2;
-				}
-				#about .about {
-					background-color: #fff;
-					box-shadow: 2px 2px 3px #ccc;
-				}
-				#about h3 {
-					color: #333;
-					font-size: 18px;
-					border-bottom: 1px solid #eee;
-					padding: 20px 0;
-					margin: 0 0 10px 0;
-				}
-				#about p {
-					line-height: 2;
-					font-size: 13px;
-				}
-				
-				.about tr,th,td{text-align: center;}
-				.about h1{margin: 60px 0;text-align: center;}
-				.about form{margin: 20px 0;}
-				.about table{margin-bottom: 60px;text-align: center;margin-left: -16px;}
-			#outer{
-					height: 1200px;
-					background: #f0f0f0;
-					z-index: 999;
-					position: fixed;
-					top: 0;left: 0;
-					width: 100%;
-					}
-			.left{
-					background: #ccc;
-					width: 220px;
-					height: 1200px;
-					padding: 10px 0;
-					text-align: center;
-					float: left;
-					}
-			.left h2{margin-top:100px;}
-			.l-mes1{
-					font-size: 22px;
-					margin: 30px 0;
-					}
-			.l-mes1 a,.title a{
-					text-decoration: none;
-					color: #000000;
-					}
-			.l-mes2{
-					color: #fff;
-					font-size: 22px;
-					background:#666666;
-					padding: 30px 60px;
-					}
-			.right{float: left;}
-			.right h1{margin: 60px;}
-			.right form{margin: 50px 50px 10px;}
-			.tb{
-					text-align: center;
-					background: #FFFFFF;
-					margin: 20px 50px;
-					}
-			.about button{
-					background: #FFFFFF;
-					border-style: none;
-					}
-
-			#close1{
-					position: absolute;
-					top: 0;right: 0;
-					padding: 0 5px;
-					z-index: 1000;
-					}
-			
-			#win1{width: 1000px;height: 40px;background: #F0F0F0;border: 1px solid #ccc;}
-			#win1 p{text-align: center;padding-top:5px;}
-			#close1{float: right;border: 1px solid #CCCCCC;background: #FFFFFF;padding: 0 5px;cursor: pointer;}
-			.main1{width: 1000px;height:350px ;background: #FFFFFF;}
-			.m-left1{width: 50%;height:350px ;border: 1px solid #CCCCCC;float: left;padding:10px 30px;}
-			.m-right1{width: 50%;height:350px ;border: 1px solid #CCCCCC;float: left;padding: 10px 30px;}
-			.w-footer1{width:1000px;height: 50px;background: #F0F0F0;border: 1px solid #CCCCCC;}
-			.close2{background: #FFFFFF;margin:10px;border-radius: 5px;padding: 0 10px;float: right;}
-			#wrap1{display: none;position:absolute;top:160px;left:200px;z-index: 1000;}
-			</style>
+		<link rel="stylesheet" href="css/seeAdoctor.css" />
 	</head>
 	<body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -180,7 +79,7 @@
 					       <td>状态</td>
 					     </tr>
 					     </thead>
-					      
+
 					     <tr id="template1">
 						      <td id="NameId1"></td>
 						      <td id="AgeId1"></td>
@@ -230,69 +129,14 @@
 				<input type="button" class="close2" value="返回" onclick="goBack()"/>
 			</div>
 		</div>
-		<script>
-			window.onload = 	function ()
-			{   
-				var owrap1 = document.getElementById("wrap1");
-				var oclose1 = document.getElementById("close1");
-				var owin1 = document.getElementById("win1");
-				var obtn = document.getElementsByClassName("bd-btn");
-				for (var i=0; i<obtn.length; i++) 
-				{
-					obtn[i].onclick = function ()
-						{
-							owrap1.style.display = "block";
-							owin1.style.display = "block";
-						};	
-				}
-				oclose1.onclick = function ()
-				{
-					owrap1.style.display = "none";
-					owin1.style.display = "none";
-				}
-				goBack = function ()
-				{
-					owrap1.style.display = "none";
-				}
-				$.ajax({ 
-                        type: "get", 
-                        url: "http://localhost:3000/test", 
-                        dataType: "jsonp", 
-                        success: function (data) {
-                        	$.each(data, function(index, item){
-                        			if (index == 0) {
-                        				var row = $("#template1");
-                        			} else {
-                        				var row = $("#template1").clone();
-                        			}
-                        			row.find("#NameId1").text(item.name1);
-                        			row.find("#AgeId1").text(item.age1);
-                        			row.find("#PhoneId1").text(item.phone1);
-                        			row.find("#OutpatientDate1").text(item.outpatientTime1);
-                        			row.find("#DoctorName1").text(item.doctor1);
-                        			row.find("#Hospital1").text(item.hospital1);
-                        			row.find(".bd-btn").text(item.status1);
-                        			row.appendTo("#tab-dates");//添加到模板的容器中
-                        		});
-								$(".bd-btn").click(function(){
-									owrap1.style.display = "block";
-									owin1.style.display = "block";
-								});
-							},
-	                        error: function (XMLHttpRequest, textStatus, errorThrown) { 
-	                                alert(errorThrown); 
-	                        } 
-	                });
-				
-			};
-		</script>
+		
 	<footer id="footer">
 		<div class="container">
 			<!--<p>企业培训 | 合作事宜 | 版权投诉</p>
 			<p>苏ICP 备12345678. © 2009-2016 南方. Powered by Bootstrap.</p>-->
 		</div>
 	</footer>
-
+	<script src="js/seeAdoctor.js"></script>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
  	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
 	<script type="text/javascript">

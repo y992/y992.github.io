@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>账户注册|南方医院🏥</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<style type="text/css">
+		*{margin:0; padding:0; font-size:14px;}
+		.Level a{color:#333;text-decoration:none}
+		.Level{list-style:none; height:50px; border-bottom:2px solid #ccc; padding-left:560px;}
+		.Level li{float:left; margin-top:20px;margin-left:60px ;}
+		.Level a{display:block;height:30px;text-align:center; line-height:30px; width:120px; border-radius:10px 10px 0 0 ;}
+		.Level .on /*a:hover*/{ color:#fff;background-color:#F60;height:40px; line-height:40px;margin-top:-10px;}
+		.nav-list{margin-top: 30px;}
+		.nav-list h2{color: #666;margin-left: 160px;padding-top: 60px;}
+		.main{margin-top: 60px;}
+		.selected{border:none;background: none;position:relative;left:0;top:0;width: 148px;height: 30px;}
+		.selected-box{border: 1px solid #ccc;width: 150px;display: inline-block;}
+		.verification{width: 320px;margin-top: 20px;}
+		.main input{height: 30px;}
+		.btn{width: 180px;background: #ccc;margin: 20PX;}
+		.main form{text-align: center;}
+		.main label{}
+	</style>
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand" style="padding: 20px 0;color: #E44F4B;">亲，请登录</a>
+            <a href="#" style="color: #666;">免费注册</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target=".navbar-responsive-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right " style="margin-top:0px;">
+                <li class="active">
+                    <a href=""><span class="glyphicon glyphicon-home" style="color: #E44F4B;"></span>首页</a>
+                </li>
+                <li>
+                    <a href=""><span class="glyphicon glyphicon-list"></span>报到</a>
+                </li>
+                <li>
+                    <a href=""><span class="glyphicon glyphicon-fire"></span>就诊</a>
+                </li>
+                <li>
+                    <a href=""><span class="glyphicon glyphicon-question-sign"></span> 关于</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div  class="nav-list">
+		<h2>用户注册</h2>
+	    <ul class="Level">	
+			    <li><a class="on" href="#">设置用户名</a></li>
+			    <li><a href="#">填写账户信息</a></li>
+			    <li><a href="#">注册成功</a></li>
+		</ul>
+</div>
+<div class="main"> 
+	<form action="save.php" method="post" >
+	    <label>手机号</label>
+	    <div class="selected-box">
+		    <select class="selected">
+		      <option value="name">中国大陆   +86</option>
+		      <option value="name">中国大陆   +86</option>
+		      <option value="name">中国大陆   +86</option>
+		      <option value="name">中国大陆   +86</option>
+		    </select>
+	    </div>
+	    <input type="text" value="请输入您的手机号" /><br>
+	    <label>验&nbsp;&nbsp;&nbsp;证</label>
+	    <input type="text" class="verification"/><br>
+	    <input type="button" value="下一步"  class="btn"/>
+ 	</form>
+</div>
+<script type="text/javascript" src="js/index.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>

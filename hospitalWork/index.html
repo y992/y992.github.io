@@ -1,137 +1,72 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<!--下面这句mata语句是解决手机浏览出现显示不和谐问题-->
-		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no"/> 		<title>医生工作站</title>
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	
-		<style>
-			
-		body {
-		  padding-top: 220px;
-		  padding-bottom: 40px;
-/*		  background-color: #eee;
-*/		}
-		
-		.form-signin {
-		  max-width: 330px;
-		  padding: 15px;
-		  margin: 0 auto;
-		}
-		.form-signin {
-			text-align: center;
-		}
-		.form-signin-title{
-			margin-bottom: 80px;
-			letter-spacing: 1px;
-		}
-		.form-signin .checkbox {
-		  margin-bottom: 10px;
-		  text-align: left;
-		}
-		.form-signin .checkbox {
-		  font-weight: normal;
-		}
-		.form-signin .form-control {
-		  position: relative;
-		  height: auto;
-		  -webkit-box-sizing: border-box;
-		     -moz-box-sizing: border-box;
-		          box-sizing: border-box;
-		  padding: 10px;
-		  font-size: 16px;
-		}
-		.form-signin .form-control:focus {
-		  z-index: 2;
-		}
-		.form-signin input[type="tel"] {
-		  margin-bottom: 10px;
-		  border-bottom-right-radius: 0;
-		  border-bottom-left-radius: 0;
-		}
-		.form-signin input[type="password"] {
-		  margin-bottom: 10px;
-		  border-top-left-radius: 0;
-		  border-top-right-radius: 0;
-		}
-		.form-signin-p{
-		display: inline-block;
-		background: #CCCCCC;
-		margin: 20px 0;
-		}
-		.form-signin label{float: left;font-size: 18px;color: #666;}
+<head>
+    <meta charset="UTF-8">
+    <!--下面这句mata语句是解决手机浏览出现显示不和谐问题-->
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no"/>
+    <title>医生工作站</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand" style="padding: 0;margin: 0;"><img src="u30.png" alt="医生工作站" width="160px"
+                                                                                height="50px"></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target=".navbar-responsive-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right " style="margin-top:0px;">
+                <li class="active">
+                    <a href="index.html"><span class="glyphicon glyphicon-home"></span>首页</a>
+                </li>
+                <li>
+                    <a href="report.html"><span class="glyphicon glyphicon-list"></span>报到</a>
+                </li>
+                <li>
+                    <a href="text1seeAdoctor.html"><span class="glyphicon glyphicon-fire"></span>就诊</a>
+                </li>
+                <li>
+                    <a href="text1about.html"><span class="glyphicon glyphicon-question-sign"></span> 关于</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
 
-		</style>
-	</head>
-	<body>
-		<nav class="navbar navbar-default navbar-fixed-top">
-					<div class="container">
-						<div class="navbar-header">
-						<a href="#" class="navbar-brand" style="padding: 0;margin: 0;"><img src="u30.png" alt="医生工作站" width="160px" height="50px"></a>
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-						<span class="sr-only">切换导航</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						</button>
-					</div>
-					<div class="collapse navbar-collapse" id="navbar-collapse">
-						<ul class="nav navbar-nav navbar-right " style="margin-top:0px;">
-							 <li class="active">
-							 	<a href="index.html"><span class="glyphicon glyphicon-home"></span>首页</a>
-							 </li>
-							 <li>
-							 	<a href="report.html"><span class="glyphicon glyphicon-list"></span>报到</a>
-							 </li>
-							 <li>
-							 	<a href="text1seeAdoctor.html"><span class="glyphicon glyphicon-fire"></span>就诊</a>
-							 </li>
-							 <li>
-							 	<a href="text1about.html"><span class="glyphicon glyphicon-question-sign"></span> 关于</a>
-							 </li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-			<div class="container">
+    <form class="form-signin" method="post" action="http://localhost:3000/postlogin">
+        <h1 class="form-signin-title">医院远程诊疗系统</h1>
+        <h2 class="form-signin-heading">欢迎登陆</h2>
+        <p class="form-signin-p">密码登陆</p>
+        <span>|</span>
+        <p class="form-signin-p">验证码登陆</p><br>
+        <label for="inputtel" <!--class="sr-only"-->请输入手机号:</label>
+        <input type="tel" name="username" id="inputtel" class="form-control" placeholder="请输入手机号" required autofocus/>
+        <label for="inputPassword" <!--class="sr-only"-->密码:</label>
+        <a href="forgetthePassword.html">忘记密码？</a>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="密码" required/>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me" /> 记住我
+            </label>
+        </div>
+<!--        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="login()">登录</button>
+-->        <a id="btnLogin" href="report.html" onClick="fun(); return false;"class="btn btn-lg btn-primary btn-block">登录</a> 
 
-		      <form class="form-signin">
-		      	<h1 class="form-signin-title">医院远程诊疗系统</h1>
-		        <h2 class="form-signin-heading">欢迎登陆</h2>
-		        <p class="form-signin-p">密码登陆</p>
-		        <span>|</span>
-		        <p class="form-signin-p">验证码登陆</p><br>
-		        <label for="inputtel" <!--class="sr-only"-->请输入手机号:</label>
-		        <input type="tel" id="inputtel" class="form-control" placeholder="请输入手机号" required autofocus />
-		        <label for="inputPassword" <!--class="sr-only"-->密码:</label>
-		        <input type="password" id="inputPassword" class="form-control" placeholder="密码" required />
-		        <div class="checkbox">
-		          <label>
-		            <input type="checkbox" value="remember-me"> 记住我
-		          </label>
-		        </div>
-		        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="openwin()">登录</button>
-		      </form>
-		
-		    </div> <!-- /container -->
-			<script>
-					function openwin()
-					{
-						window.open("report.html");
-	//					window.location.href="p-1.2.1.html";
-					}
-	//				var telText=document.getElementById("tel"); //得到id=“name”的对象，
-	//				telText.focus=function(){ //文本域得到焦点
-	//				this.value=""; //设置它的文本内容为空
-	//				}
-	//				telText.onblur=function(){ //文本域失去焦点
-	//				if((this.value)==null || (this.value)==""){//没有输入内容
-	//				this.value="请输入手机号";
-	//				}
-	//				}
-	
-			</script>
-			<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
-	</body>
+        <a href="login.html">免费注册</a>
+    </form>
+
+</div> <!-- /container -->
+<script type="text/javascript" src="js/index.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
 </html>

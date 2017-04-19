@@ -1,0 +1,100 @@
+.jumbotron {
+					background-image: url();
+					margin: 50px 0 0 0;
+					color: #ccc;
+				}
+				.jumbotron h1 {
+					font-size: 26px;
+					padding: 0 0 0 20px;
+				}
+				.jumbotron h4 {
+					font-size: 15px;
+					padding: 0 0 0 20px;
+				}
+				#about {
+					background-color: #eee;
+					padding: 40px 15px;
+				}
+				#about a {
+					color: #0059b2;
+				}
+				#about .about {
+					background-color: #fff;
+					box-shadow: 2px 2px 3px #ccc;
+				}
+				#about h3 {
+					color: #333;
+					font-size: 18px;
+					border-bottom: 1px solid #eee;
+					padding: 20px 0;
+					margin: 0 0 10px 0;
+				}
+				#about p {
+					line-height: 2;
+					font-size: 13px;
+				}
+				
+				.about tr,th,td{text-align: center;}
+				.about h1{margin: 60px 0;text-align: center;}
+				.about form{margin: 20px 0;}
+				.about table{margin-bottom: 60px;text-align: center;margin-left: -16px;}
+			#outer{
+					height: 1200px;
+					background: #f0f0f0;
+					z-index: 999;
+					position: fixed;
+					top: 0;left: 0;
+					width: 100%;
+					}
+			.left{
+					background: #ccc;
+					width: 220px;
+					height: 1200px;
+					padding: 10px 0;
+					text-align: center;
+					float: left;
+					}
+			.left h2{margin-top:100px;}
+			.l-mes1{
+					font-size: 22px;
+					margin: 30px 0;
+					}
+			.l-mes1 a,.title a{
+					text-decoration: none;
+					color: #000000;
+					}
+			.l-mes2{
+					color: #fff;
+					font-size: 22px;
+					background:#666666;
+					padding: 30px 60px;
+					}
+			.right{float: left;}
+			.right h1{margin: 60px;}
+			.right form{margin: 50px 50px 10px;}
+			.tb{
+					text-align: center;
+					background: #FFFFFF;
+					margin: 20px 50px;
+					}
+			.about button{
+					background: #FFFFFF;
+					border-style: none;
+					}
+
+			#close1{
+					position: absolute;
+					top: 0;right: 0;
+					padding: 0 5px;
+					z-index: 1000;
+					}
+			
+			#win1{width: 1000px;height: 40px;background: #F0F0F0;border: 1px solid #ccc;}
+			#win1 p{text-align: center;padding-top:5px;}
+			#close1{float: right;border: 1px solid #CCCCCC;background: #FFFFFF;padding: 0 5px;cursor: pointer;}
+			.main1{width: 1000px;height:350px ;background: #FFFFFF;}
+			.m-left1{width: 50%;height:350px ;border: 1px solid #CCCCCC;float: left;padding:10px 30px;}
+			.m-right1{width: 50%;height:350px ;border: 1px solid #CCCCCC;float: left;padding: 10px 30px;}
+			.w-footer1{width:1000px;height: 50px;background: #F0F0F0;border: 1px solid #CCCCCC;}
+			.close2{background: #FFFFFF;margin:10px;border-radius: 5px;padding: 0 10px;float: right;}
+			#wrap1{display: none;position:absolute;top:160px;left:200px;z-index: 1000;}
